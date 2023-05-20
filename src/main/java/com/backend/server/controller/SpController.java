@@ -1,10 +1,20 @@
-package com.backend.server.controller;
+/*package com.backend.server.controller;
 
 import com.backend.server.domain.Member;
 import com.backend.server.service.SpService;
+import com.nimbusds.openid.connect.sdk.AuthenticationRequest;
+import com.nimbusds.openid.connect.sdk.AuthenticationResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.SignatureAlgorithm;
 
 import java.util.Optional;
 
@@ -33,9 +43,9 @@ public class SpController {
     }
 
     @PutMapping("/update")
-    public ResponseEntity<Optional<Member>> read(@RequestParam Long id, @RequestParam int master) {
+    public ResponseEntity<Optional<Member>> read(@RequestParam Long id, @RequestParam String kind) {
         return ResponseEntity.ok()
-                .body(spService.update(id, master));
+                .body(spService.update(id, kind));
     }
 
     @DeleteMapping("/delete/{id}")
@@ -44,3 +54,24 @@ public class SpController {
 
     }
 }
+   // @Autowired
+    //private AuthenticationManager authenticationManager;
+    //@Autowired
+    //private JwtUtils jwtUtils;
+
+   /* @PostMapping("/api/login")
+    public ResponseEntity<?> login(@RequestBody AuthenticationRequest authenticationRequest) {
+        try {
+            authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(), authenticationRequest.getPassword()));
+        } catch (BadCredentialsException e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+
+        final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
+
+        final String token = jwtUtils.generateToken(userDetails);
+
+        return ResponseEntity.ok(new AuthenticationResponse(token));
+    }
+}*/

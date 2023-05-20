@@ -1,4 +1,4 @@
-package com.backend.server.service;
+/*package com.backend.server.service;
 
 import com.backend.server.domain.Member;
 import com.backend.server.repository.SpRepository;
@@ -11,6 +11,7 @@ import java.util.Optional;
 public class SpService {
     private final SpRepository spRepository;
 
+
     @Autowired
     public SpService(SpRepository spRepository) {
         this.spRepository = spRepository;
@@ -18,15 +19,16 @@ public class SpService {
     public Member create(Member member){
         return spRepository.save(member);
     }
-    public Optional<Member>/*null일수있는객체받을때*/ read(Long id){
+    public Optional<Member> read(Long id){
         return spRepository.findById(id);
     }
-    public Optional<Member> update(Long id, int master){
+    public Optional<Member> update(Long id, String kind){
         Member member = read(id).get();
-        member.setMaster(master);
+        member.setKind(kind);
         return Optional.ofNullable(spRepository.save(member));
     }
     public void delete(Long id){
         spRepository.deleteById(id);
     }
 }
+*/

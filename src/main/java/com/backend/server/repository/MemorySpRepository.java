@@ -1,4 +1,4 @@
-package com.backend.server.repository;
+/*package com.backend.server.repository;
 
 import com.backend.server.domain.Member;
 import org.springframework.data.domain.Example;
@@ -16,6 +16,12 @@ import java.util.function.Function;
 public class MemorySpRepository implements SpRepository{
     private static Map<Long, Member> store = new HashMap<>();
     private static long sequence = 0L;
+
+    @Override
+    public Optional<Member> findByAccount(String account) {
+        return Optional.empty();
+    }
+
     @Override
     public Member save(Member member) {
         member.setId(++sequence);
@@ -167,3 +173,4 @@ public class MemorySpRepository implements SpRepository{
         return null;
     }
 }
+*/

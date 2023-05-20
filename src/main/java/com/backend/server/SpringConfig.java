@@ -1,4 +1,4 @@
-package com.backend.server;
+/*package com.backend.server;
 
 import com.backend.server.repository.SpRepository;
 import com.backend.server.service.SpService;
@@ -17,3 +17,4 @@ public class SpringConfig {
         return new SpService((spRepository));
     }
 }
+*/
