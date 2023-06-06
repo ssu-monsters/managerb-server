@@ -1,5 +1,9 @@
-package com.backend.server.domain;
+package com.backend.server.request;
 
+import com.backend.server.domain.Authority1;
+import com.backend.server.domain.Authority2;
+import com.backend.server.domain.Member;
+import com.backend.server.domain.Organization;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -28,7 +32,7 @@ public class SignResponse {
 
     //private String prefer;
     private List<Authority1> roles = new ArrayList<>();
-
+    private List<Authority2> og_roles = new ArrayList<>();
     private String token;
 
     public SignResponse(Member member) {
@@ -37,5 +41,12 @@ public class SignResponse {
         this.name = member.getName();
         this.email = member.getEmail();
         this.roles = member.getRoles();
+    }
+    public SignResponse(Organization organization) {
+        this.id = organization.getId();
+        this.account = organization.getAccount();
+        this.name = organization.getName();
+        this.email = organization.getEmail();
+        this.og_roles = organization.getOg_roles();
     }
 }

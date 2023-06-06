@@ -1,4 +1,4 @@
-package com.backend.server.domain;
+package com.backend.server.request;
 
 import lombok.Getter;
 import lombok.Setter;

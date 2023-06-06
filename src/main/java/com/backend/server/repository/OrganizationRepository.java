@@ -8,14 +8,18 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
 
 @Transactional
-public interface SpRepository extends JpaRepository<Member,Long> {
+public interface OrganizationRepository extends JpaRepository<Organization, Long> {
 
-    Optional<Member> findByAccount(String account);
+    Optional<Organization> findByAccount(String og_account);
+
     @Override
-    Member save(Member member);
-    @Override // Read
-    Optional<Member> findById(Long id);
+    Organization save(Organization organization);
 
-    @Override // Delete
+    @Override
+        // Read
+    Optional<Organization> findById(Long id);
+
+    @Override
+        // Delete
     void deleteById(Long id);
 }

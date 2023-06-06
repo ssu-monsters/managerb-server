@@ -1,6 +1,7 @@
 package com.backend.server.security;
 
 import com.backend.server.domain.Authority1;
+import com.backend.server.domain.Authority2;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
@@ -54,6 +55,17 @@ public class JwtProvider {
                 .compact();
     }
 
+    public String createToken2(String account, List<Authority2> roles) {
+        Claims claims = Jwts.claims().setSubject(account);
+        claims.put("roles", roles);
+        Date now = new Date();
+        return Jwts.builder()
+                .setClaims(claims)
+                .setIssuedAt(now)
+                .setExpiration(new Date(now.getTime() + exp))
+                .signWith(secretKey, SignatureAlgorithm.HS256)
+                .compact();
+    }
     // 권한정보 획득
     // Spring Security 인증과정에서 권한확인을 위한 기능
     public Authentication getAuthentication(String token) {
