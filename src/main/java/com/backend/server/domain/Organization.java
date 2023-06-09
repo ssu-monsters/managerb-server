@@ -18,8 +18,8 @@ import java.util.List;
 public class Organization {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "organization_seq")
-    @SequenceGenerator(name = "organization_seq", sequenceName = "organization_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "organization_seq1")
+    @SequenceGenerator(name = "organization_seq1", sequenceName = "organization_seq1", allocationSize = 1)
     private Long id;
 
     @Column(unique = true)

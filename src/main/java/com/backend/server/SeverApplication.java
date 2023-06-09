@@ -1,5 +1,6 @@
 package com.backend.server;
 
+import com.backend.server.security.CorsConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -13,17 +14,8 @@ public class SeverApplication {
 		SpringApplication.run(SeverApplication.class, args);
 	}
 
-	@Bean
-	public WebMvcConfigurer corsConfigurer() {
-		return new WebMvcConfigurer() {
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**")
-						.allowedOrigins("https://managervb-front.vercel.app")
-						.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-						.allowedHeaders("Origin", "Content-Type", "Accept")
-						.allowCredentials(true);
-			}
-		};
+	public CorsConfig corsConfig() {
+		return new CorsConfig();
 	}
+
 }
