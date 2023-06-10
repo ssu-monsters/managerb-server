@@ -63,7 +63,7 @@ public class SecurityConfig {
                 .antMatchers("/register", "/login").permitAll()
                 .antMatchers("/og_register", "/og_login").permitAll()
                 .antMatchers("/apply").permitAll()
-                .antMatchers("/recruits", "/organization/get","/user/get","/url/{step}").permitAll()
+                .antMatchers("/recruits", "/organization/get","/user/get","/promotion/all","/promotion/get","/url/{step}").permitAll()
                 // /admin으로 시작하는 요청은 ADMIN 권한이 있는 유저에게만 허용
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 // /user 로 시작하는 요청은 USER 권한이 있는 유저에게만 허용
