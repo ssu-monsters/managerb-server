@@ -17,7 +17,7 @@ public class Recruit {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "recruit_seq")
     @SequenceGenerator(name = "recruit_seq", sequenceName = "recruit_seq", allocationSize = 1)
-    private Long id;
+    private int id;
 
     //@ManyToOne(fetch = FetchType.LAZY)
     //@JoinColumn(name = "organization_account")

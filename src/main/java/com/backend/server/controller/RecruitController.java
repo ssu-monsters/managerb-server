@@ -1,4 +1,4 @@
-package com.backend.server.controller;
+/*package com.backend.server.controller;
 
 import com.backend.server.domain.Promotion;
 import com.backend.server.service.RecruitService;
@@ -24,5 +24,6 @@ public class RecruitController {
             // Handle other cases or return null if needed
             return null;
         }
-    }*/
+    }
 }
+*/

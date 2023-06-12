@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RecruitResponse {
-    private Long id;
+    private long id;
     private RecruitType recruitType;
 
     private String step;

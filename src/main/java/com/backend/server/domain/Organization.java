@@ -20,7 +20,7 @@ public class Organization {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "organization_seq1")
     @SequenceGenerator(name = "organization_seq1", sequenceName = "organization_seq1", allocationSize = 1)
-    private Long id;
+    private long id;
 
     @Column(unique = true)
     private String account;

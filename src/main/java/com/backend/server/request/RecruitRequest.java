@@ -11,7 +11,7 @@ import javax.persistence.Enumerated;
 @Getter
 @Setter
 public class RecruitRequest {
-    private Long id;
+    private long id;
     private RecruitType recruitType;
 
     private String step;

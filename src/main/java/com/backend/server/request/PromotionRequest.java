@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class PromotionRequest {
 
-    private Long id;
+    private long id;
 
     private String title;
 

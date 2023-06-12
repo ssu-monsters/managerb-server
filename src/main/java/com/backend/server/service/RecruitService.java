@@ -1,4 +1,4 @@
-package com.backend.server.service;
+/*package com.backend.server.service;
 
 import com.backend.server.domain.Promotion;
 import com.backend.server.domain.Recruit;
@@ -46,4 +46,4 @@ public class RecruitService {
 
         return promotion;
     }
-}
+}*/

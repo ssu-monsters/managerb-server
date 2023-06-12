@@ -18,7 +18,7 @@ public class Authority1 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonIgnore
-    private Long id;
+    private long id;
 
     private String name;
 

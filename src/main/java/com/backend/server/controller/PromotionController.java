@@ -1,6 +1,7 @@
 package com.backend.server.controller;
 
 import com.backend.server.domain.Promotion;
+import com.backend.server.request.PromotionRequest;
 import com.backend.server.request.PromotionResponse;
 import com.backend.server.request.SignResponse;
 import com.backend.server.service.PromotionService;
@@ -26,7 +27,12 @@ public class PromotionController {
         return new ResponseEntity<>(promotions, HttpStatus.OK);
     }
     @GetMapping("/promotion/get")
-    public ResponseEntity<PromotionResponse> getpromotion(@RequestParam int organizationid) throws Exception {
+    public ResponseEntity<PromotionResponse> getpromotion(@RequestParam long organizationid) throws Exception {
         return new ResponseEntity<>( promotionService.getPromotion(organizationid), HttpStatus.OK);
+    }
+    @CrossOrigin(origins = "https://managervb-front.vercel.app")
+    @PostMapping(value = "/promotion/write")
+    public ResponseEntity<Boolean> writepromotion(@RequestBody PromotionRequest request) throws Exception {
+        return new ResponseEntity<>(promotionService.check(request), HttpStatus.OK);
     }
 }

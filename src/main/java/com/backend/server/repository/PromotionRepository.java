@@ -11,6 +11,8 @@ import java.util.Optional;
 
 @Transactional
 public interface PromotionRepository extends JpaRepository<Promotion, Long> {
-    Optional<Promotion> findByOrganizationId(int organizationId);
+    Optional<Promotion> findByOrganizationId(long organizationId);
     List<Promotion> findAll();
+    @Override
+    Promotion save(Promotion promotion);
 }

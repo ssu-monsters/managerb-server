@@ -17,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 public class PromotionResponse {
 
-    private Long id;
+    private long id;
 
     private String title;
 
@@ -37,7 +37,7 @@ public class PromotionResponse {
 
     private String thumbnailImage;
 
-    private int organizationId;
+    private long organizationId;
     public PromotionResponse(Promotion promotion) {
         this.id = promotion.getId();
         this.title = promotion.getTitle();

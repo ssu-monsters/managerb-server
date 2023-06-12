@@ -18,7 +18,7 @@ import java.util.List;
 @NoArgsConstructor
 public class SignResponse {
 
-    private Long id;
+    private long id;
 
     private String account;
 

@@ -1,9 +1,6 @@
 package com.backend.server.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Getter
-@Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Promotion {
@@ -23,7 +20,7 @@ public class Promotion {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "promotion_seq")
     @SequenceGenerator(name = "promotion_seq", sequenceName = "promotion_seq", allocationSize = 1)
-    private Long id;
+    private long id;
 
     @Column(name = "title", nullable = false)
     private String title;
@@ -53,6 +50,6 @@ public class Promotion {
     private String thumbnailImage;
 
     @Column(name = "organization_id", nullable = false)
-    private int organizationId;
+    private long organizationId;
 
 }

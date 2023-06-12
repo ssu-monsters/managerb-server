@@ -1,6 +1,6 @@
 package com.backend.server;
 
-import com.backend.server.security.CorsConfig;
+//import com.backend.server.security.CorsConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -14,8 +14,8 @@ public class SeverApplication {
 		SpringApplication.run(SeverApplication.class, args);
 	}
 
-	public CorsConfig corsConfig() {
+	/*public CorsConfig corsConfig() {
 		return new CorsConfig();
 	}
-
+*/
 }

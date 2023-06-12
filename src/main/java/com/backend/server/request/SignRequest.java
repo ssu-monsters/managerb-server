@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class SignRequest {
 
-    private Long id;
+    private long id;
 
     private String account;
 
